@@ -153,7 +153,7 @@ export default function Dashboard() {
         <div className="flex justify-between items-end">
             <div className="space-y-1">
                 <h1 className="text-3xl font-bold tracking-tight text-slate-900">Dashboard</h1>
-                <p className="text-muted-foreground">ระบบจัดการการขนส่งเวชภัณฑ์ทางอากาศ (Drone Medical Transport Management)</p>
+                <p className="text-muted-foreground">ระบบจัดการการขนส่งเวชภัณฑ์ทางอากาศ (Drone Medical Transport Management) จังหวัดสตูล</p>
             </div>
             <div className="flex gap-2">
                 <Button variant="outline" onClick={generateDemoData} className="border-blue-200 text-blue-700 hover:bg-blue-50">

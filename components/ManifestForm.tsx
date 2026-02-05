@@ -94,7 +94,22 @@ export default function ManifestForm({ initialData, onSubmit, isReadOnly = false
         </CardHeader>
         <CardContent className="grid grid-cols-2 md:grid-cols-3 gap-6">
           <FormEntry label="หน่วยงาน/สถานบริการ">
-            <Input {...register('unitName')} disabled={isReadOnly} />
+             <Controller
+                control={control}
+                name="unitName"
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isReadOnly}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="เลือกหน่วยงาน" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="รพ.สต.ตันหยงโป">รพ.สต.ตันหยงโป</SelectItem>
+                      <SelectItem value="รพ.สต.เกาะสาหร่าย">รพ.สต.เกาะสาหร่าย</SelectItem>
+                      <SelectItem value="รพ.สต.เกาะปูยู">รพ.สต.เกาะปูยู</SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
+            />
           </FormEntry>
           <FormEntry label="เลขที่เอกสาร">
             <Input {...register('docNumber')} disabled={isReadOnly} />
