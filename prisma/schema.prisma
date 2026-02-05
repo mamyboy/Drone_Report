@@ -1,0 +1,18 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Manifest {
+  id        String   @id // Corresponds to manifest.id (e.g. "DEMO-123")
+  status    String   // InTransit, Completed, etc.
+  content   String   // Stores the full TransportManifest JSON object
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
