@@ -8,7 +8,7 @@ export async function GET() {
     });
 
     // Parse the content string back to JSON
-    const parsedData = manifests.map(m => {
+    const parsedData = manifests.map((m: any) => {
         try {
             return JSON.parse(m.content);
         } catch (e) {
